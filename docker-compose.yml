@@ -1,0 +1,23 @@
+# mongodb compose setup
+version: '3.8'
+
+services:
+  mongodb:
+   container_name: mongo
+   image: mongo
+   volumes:
+    - ./data:/data/db
+   ports:
+    - '27018:27017'
+  app:
+      container_name: books_api
+      build: .
+      ports:
+        - "8080:8080"
+      links:
+        - mongodb
+      depends_on:
+        - mongodb
+
+volumes:
+  mongodb_data:
