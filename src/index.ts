@@ -1,14 +1,23 @@
 import fastify from "fastify";
 
-const server = fastify();
+import booksRoute from "./routes/books";
 
-server.get("/users", async (): Promise<User[]> => {
+import dbConnector from "./db";
+
+const server = fastify({
+    logger: true
 });
 
-server.listen(8080, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-  console.log(`Server listening at ${address}`);
+server.register(dbConnector);
+
+server.register(booksRoute);
+
+server.listen({
+    port: 8080
+}, (err, address) => {
+    if (err) {
+        console.error(err);
+        process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
 });
