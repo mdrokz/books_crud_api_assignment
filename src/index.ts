@@ -18,7 +18,8 @@ server.register(dbConnector);
 server.register(booksRoute);
 
 server.listen({
-    port: 8080
+    port: 8080,
+    host: "0.0.0.0"
 }, (err, address) => {
     if (err) {
         console.error(err);
