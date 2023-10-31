@@ -69,7 +69,7 @@ Build and Run with Docker Compose:
 
 ### Tests
 
-you need a local mongodb instance for connection as i havent added test runner in docker image build time
+You need a local mongodb instance for connection as i havent added test runner in docker image build time
 
 ```bash
 npm test
@@ -80,6 +80,20 @@ npm test
 ```bash
 docker-compose up --build
 The --build flag ensures that Docker builds the image using the provided Dockerfile. Once built, Docker Compose will start the services defined in docker-compose.yml.
+```
+
+### Running without docker
+
+You can use the build & start scripts present in package.json
+
+You will also need to change the .env to your local mongodb connection
+
+```bash
+npm run build
+```
+
+```
+npm start
 ```
 
 #### Access the Application:
