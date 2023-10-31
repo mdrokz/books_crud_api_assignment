@@ -96,9 +96,19 @@ npm run build
 npm start
 ```
 
+### Deployment
+
+I have setup fly.io for deployments
+
+```bash
+fly deploy
+```
+
 #### Access the Application:
 
 With the services running, you can access the Node.js application in your browser or through any API client at:
+
+fly.io https link - https://books-crud-api.fly.dev
 
 ```
 http://localhost:8080
