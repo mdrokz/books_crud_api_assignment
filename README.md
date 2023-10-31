@@ -62,8 +62,8 @@ A simple CRUD API for managing books, built using Fastify and MongoDB.
 #### Start by cloning the repository to your local machine:
 
 ```bash
-git clone [repository_url]
-cd [repository_directory]
+git clone https://github.com/mdrokz/books_crud_api_assignment
+cd books_crud_api_assignment
 Build and Run with Docker Compose:
 ```
 
@@ -108,7 +108,7 @@ fly deploy
 
 With the services running, you can access the Node.js application in your browser or through any API client at:
 
-fly.io https link - https://books-crud-api.fly.dev
+fly.io https link - https://books-crud-api.fly.dev/books
 
 ```
 http://localhost:8080
