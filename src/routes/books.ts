@@ -1,13 +1,16 @@
-import { ObjectId } from "@fastify/mongodb";
+import { ObjectId, } from "@fastify/mongodb";
 import { FastifyInstance } from "fastify";
-
+import { Collection, Document } from "mongodb";
 
 export default async function (fastify: FastifyInstance, options: {}) {
+
+    await fastify.ready(async (err) => {
+        console.error(err);
+    });
 
     if (!fastify.mongo.db) {
         throw new Error('MongoDB is not connected');
     }
-
     const collection = fastify.mongo.db.collection('books');
 
     collection.createIndex({ title: 'text', author: 'text' });
