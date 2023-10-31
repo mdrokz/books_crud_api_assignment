@@ -15,4 +15,4 @@ RUN npm run build
 # container exposed network port number
 EXPOSE 8080
 # command to run within the container
-CMD ["node", "./dist/src/index.js"]
+CMD ["node", "./dist/index.js"]
