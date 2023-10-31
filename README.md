@@ -24,7 +24,6 @@ A simple CRUD API for managing books, built using Fastify and MongoDB.
 * Method: POST
 * Body:
 ```json
-Copy code
 {
   "title": "Book Title",
   "author": "Author Name"
@@ -38,7 +37,6 @@ Copy code
 * Method: PUT
 * Body:
 ```json
-Copy code
 {
   "title": "Updated Title",
   "author": "Updated Author"
@@ -52,5 +50,43 @@ Copy code
 * Method: DELETE
 * Description: Deletes a book by its ID.
 
+## Prerequisites
+* Docker
+* Node
+* NPM
 
 ## Setup & Running
+
+### Clone the Repository:
+
+#### Start by cloning the repository to your local machine:
+
+```bash
+git clone [repository_url]
+cd [repository_directory]
+Build and Run with Docker Compose:
+```
+
+### Tests
+
+you need a local mongodb instance for connection as i havent added test runner in docker image build time
+
+```bash
+npm test
+```
+
+#### Use Docker Compose to build and run the application:
+
+```bash
+docker-compose up --build
+The --build flag ensures that Docker builds the image using the provided Dockerfile. Once built, Docker Compose will start the services defined in docker-compose.yml.
+```
+
+#### Access the Application:
+
+With the services running, you can access the Node.js application in your browser or through any API client at:
+
+```
+http://localhost:8080
+Adjust the port (8080 in this example) if your docker-compose.yml specifies a different port mapping.
+```

@@ -3,6 +3,11 @@ import fastify from "fastify";
 import booksRoute from "./routes/books";
 
 import dbConnector from "./db";
+import { configDotenv } from "dotenv";
+
+
+// load .env variables into process.env
+configDotenv();
 
 const server = fastify({
     logger: true

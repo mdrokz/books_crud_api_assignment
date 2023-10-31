@@ -11,7 +11,8 @@ RUN npm i
 COPY . /usr/src/app
 # build the project with tsc
 RUN npm run build
+
 # container exposed network port number
 EXPOSE 8080
 # command to run within the container
-CMD ['node', './dist/index.js']
+CMD ["node", "./dist/src/index.js"]
